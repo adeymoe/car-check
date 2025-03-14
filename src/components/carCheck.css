@@ -1,0 +1,504 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #000;
+    text-align: center;
+}
+
+/* Adding a subtle carbon fiber pattern */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Adding a futuristic grid background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Header Section */
+.header {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.car {
+    position: absolute;
+    left: -150px;
+    width: 120px;
+    animation: moveCar 5s linear infinite;
+}
+
+@keyframes moveCar {
+    from {
+        left: -150px;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+/* ProblemCheck Section */
+.problemCheck {
+    padding: 30px;
+    margin: 20px auto;
+    width: 100%;
+    border-radius: 0px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: black;
+}
+
+.problemCheck label {
+    font-size: 18px;
+    font-weight: bold;
+    color: gold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.problemCheck textarea {
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    padding-right: 40px;
+}
+
+textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: yellow;
+    border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #555, #222);
+}
+
+/* AI Suggestions Box */
+.suggestions {
+    background: blueviolet;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: left;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.suggestions.visible {
+    display: block;
+}
+
+.problemCheck button {
+    background: gold;
+    color: black;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.problemCheck button:hover {
+    background: red;
+}
+
+button.listening {
+    background: red;
+    color: white;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.textareaContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#microphone {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0.9;
+}
+
+#microphone:hover {
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+}
+
+#microphone:active {
+    background: red;
+}
+
+.solutionDisplay {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .solutionDisplay h2 {
+    color: #0056b3;
+    font-size: 24px;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .solutionDisplay h3 {
+    color: #333;
+    font-size: 20px;
+    margin-top: 20px;
+    text-decoration: underline;
+  }
+  
+  .solutionDisplay ul, .solutionDisplay ol {
+    padding-left: 25px;
+  }
+  
+  .solutionDisplay li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .solutionDisplay p {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+  
+  .solutionDisplay .critical {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    margin: 15px 0;
+  }
+  
+  .solutionDisplay .attention {
+    background-color: #ffc107;
+    color: #333;
+    padding: 12px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    margin: 15px 0;
+  }
+  
+  .solutionDisplay .cost {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+  }
+  
+  .solutionDisplay ul {
+    list-style: none;
+  }
+  
+  .solutionDisplay ul li::before {
+    content: "✔ ";
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .solutionDisplay ol {
+    counter-reset: step-counter;
+  }
+  
+  .solutionDisplay ol li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 30px;
+  }
+  
+  .solutionDisplay ol li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    background: #007bff;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  
+  .solutionDisplay .prevention {
+    background-color: #17a2b8;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+  }
+/* KnowYourCar Section */
+.knowYourCar {
+    background: white;
+    padding: 30px;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 0px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.knowYourCar input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid yellow;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: white;
+    color: black;
+}
+
+.knowYourCar button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.knowYourCar button:hover {
+    background: yellow;
+    color: black;
+}
+
+/* Vehicle Info Section */
+.vehicle-info {
+    background: #f8f9fa;
+    padding: 20px;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.vehicle-info div {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-info b {
+    font-size: 18px;
+    color: #0056b3;
+}
+
+.vehicle-info ul {
+    padding-left: 20px;
+}
+
+.vehicle-info li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.vehicle-info li::before {
+    content: "✔ ";
+    color: #28a745;
+    font-weight: bold;
+}
+
+.vehicle-info .critical {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+.vehicle-info .attention {
+    background-color: #ffc107;
+    color: #333;
+    padding: 12px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+.vehicle-info .cost {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.vehicle-info .prevention {
+    background-color: #17a2b8;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Footer Container */
+.footer-container {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+/* Copyright Icon */
+.copyright-icon {
+    color: yellow;
+    font-size: 24px;
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Scroll to Top Button */
+#icon-box {
+    background-color: yellow;
+    color: black;
+    padding: 12px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+#icon-box:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Arrow Icon */
+.arrow-icon {
+    font-size: 24px;
+}
+
+@media (max-width: 480px) {
+    .problemCheck label {
+        font-size: 16px;
+    }
+
+    .problemCheck button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .knowYourCar input {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .knowYourCar button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .vehicle-info {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+}
