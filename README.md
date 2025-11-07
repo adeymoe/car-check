@@ -1,4 +1,4 @@
-# My Awesome Project
+# CAR CHECK
 Car Check App is an intelligent vehicle support assistant that helps users diagnose car issues using natural language and provides quick access to car specifications by simply typing in the car name or model. It combines AI-powered diagnostics with instant vehicle information lookup in one platform.
 
 **Link to project:** https://car-check-iota.vercel.app/
@@ -22,7 +22,7 @@ Demonstrates ability to integrate external APIs and handle dynamic user input ef
 
 ## Optimizations
 
-Mechanic Finder: Suggest nearby certified mechanics based on user location.
+Mechanic Finder: Suggest nearby certified mechanics based on user location.(Added on local development but not included due to legal binding with client)
 Smart Cost Estimator: Use AI + external APIs to estimate realistic repair costs.
 User Authentication: Personalized dashboard for saved vehicles and past interactions.
  Save History: Store previous diagnoses for reference and comparison.
